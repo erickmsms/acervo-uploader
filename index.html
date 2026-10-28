@@ -3,17 +3,120 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Acervo Uploader</title>
-<style>body{font-family:system-ui,sans-serif;max-width:680px;margin:40px auto;padding:0 16px;line-height:1.6;color:#222}a{color:#0b57d0}</style>
+<title>Acervo Uploader – ferramenta de publicação do canal Acervo Político</title>
+<meta name="description" content="Acervo Uploader: ferramenta de computador do canal Acervo Político para publicar os próprios vídeos no YouTube e no TikTok pelas APIs oficiais.">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="apple-touch-icon" href="icon.png">
+<style>
+:root{--bg:#dcd6c8;--ink:#111;--card:#f6f2e8;--verde:#3dab57;--mute:#4a463d}
+*{box-sizing:border-box}
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",sans-serif;line-height:1.6;color:var(--ink);background:var(--bg)}
+a{color:var(--ink)}
+header{background:var(--ink);color:#fff}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
+nav{display:flex;align-items:center;gap:20px;padding:14px 0;flex-wrap:wrap}
+nav .marca{display:flex;align-items:center;gap:10px;font-weight:800;color:#fff;text-decoration:none;margin-right:auto}
+nav .marca img{width:36px;height:36px;border-radius:8px}
+nav a.l{color:#e8e4d8;text-decoration:none;font-size:15px}
+nav a.l:hover{color:var(--verde)}
+.hero{padding:56px 0 48px}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin:0 0 14px}
+.hero p{font-size:18px;max-width:640px;margin:0;color:#d8d3c5}
+.hero .barra{width:64px;height:6px;border-radius:3px;background:var(--verde);margin:0 0 18px}
+main{padding:36px 0}
+h2{font-size:24px;margin:0 0 12px}
+section{margin-bottom:36px}
+.grade{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:14px;padding:18px 20px}
+.card h3{margin:0 0 6px;font-size:18px}
+.card p{margin:0;color:var(--mute)}
+ol.passos{padding-left:22px}
+ol.passos li{margin-bottom:8px}
+.redes a{display:inline-block;margin:0 10px 8px 0;padding:8px 16px;border:2px solid var(--ink);border-radius:999px;text-decoration:none;font-weight:600;background:var(--card)}
+.redes a:hover{background:var(--ink);color:#fff}
+footer{background:var(--ink);color:#cfcabb;padding:26px 0;font-size:14px}
+footer a{color:#fff}
+footer .links{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:8px}
+</style>
 </head>
 <body>
-<h1>Acervo Uploader</h1>
-<p>Ferramenta interna para publicar os vídeos de um canal no YouTube (YouTube Data API) e no TikTok
-(TikTok Content Posting API), com título, descrição e legenda.</p>
-<p>Não é um serviço aberto ao público: só as contas do próprio canal usam este aplicativo.</p>
-<p lang="en"><em>Internal desktop tool used by a single video creator to publish their own videos to YouTube
-and TikTok through the official APIs. It is not offered to the public.</em></p>
-<p><a href="privacidade.html">Política de privacidade / Privacy Policy</a> ·
-<a href="termos.html">Termos de uso / Terms of Service</a></p>
+<header>
+  <div class="wrap">
+    <nav>
+      <a class="marca" href="index.html"><img src="icon.png" alt="Logo do Acervo Uploader">Acervo Uploader</a>
+      <a class="l" href="#como-funciona">Como funciona</a>
+      <a class="l" href="#canal">O canal</a>
+      <a class="l" href="privacidade.html">Privacidade</a>
+      <a class="l" href="termos.html">Termos</a>
+    </nav>
+    <div class="hero">
+      <div class="barra"></div>
+      <h1>Publique os vídeos do Acervo Político no YouTube e no TikTok</h1>
+      <p>O Acervo Uploader é a ferramenta de computador do canal Acervo Político para enviar os próprios vídeos às
+      plataformas pelas APIs oficiais, com título, descrição e legenda escolhidos pelo criador.</p>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section id="o-que-e">
+    <h2>O que é</h2>
+    <p>O canal Acervo Político (@AcervoPoliticaBR) produz cortes, melhores momentos e vídeos narrados sobre política
+    brasileira. O Acervo Uploader é o programa que o próprio criador usa no computador para colocar esses vídeos no ar:
+    ele envia o arquivo, aplica a legenda e a visibilidade escolhidas e registra o que foi publicado.</p>
+    <p>O aplicativo é de uso do próprio canal: não há cadastro de novos usuários e ele não publica nada sem a ação do
+    dono da conta.</p>
+  </section>
+
+  <section id="como-funciona">
+    <h2>Como funciona</h2>
+    <ol class="passos">
+      <li>O criador abre o aplicativo no computador e escolhe o vídeo pronto e a legenda.</li>
+      <li>Autoriza o acesso à própria conta pelo Login Kit do TikTok (ou pelo login do Google, no YouTube).</li>
+      <li>O aplicativo consulta as opções de privacidade que a conta permite e o criador escolhe qual usar.</li>
+      <li>O vídeo é enviado pela API oficial, como rascunho ou publicação, e o aplicativo mostra o resultado.</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Recursos</h2>
+    <div class="grade">
+      <div class="card"><h3>YouTube</h3><p>Envio de vídeos e Shorts com título, descrição, tags, visibilidade e playlists, pela YouTube Data API.</p></div>
+      <div class="card"><h3>TikTok</h3><p>Envio dos Shorts como rascunho ou publicação com legenda, pelo Login Kit e pela Content Posting API.</p></div>
+      <div class="card"><h3>Controle do criador</h3><p>Você escolhe vídeo, legenda e visibilidade de cada postagem, e pode revogar o acesso quando quiser.</p></div>
+    </div>
+  </section>
+
+  <section id="canal">
+    <h2>O canal</h2>
+    <p>Acompanhe o Acervo Político nas redes (o @ é o mesmo em todas):</p>
+    <div class="redes">
+      <a href="https://www.youtube.com/@AcervoPoliticaBR">YouTube @AcervoPoliticaBR</a>
+      <a href="https://www.instagram.com/acervopoliticabr/">Instagram @acervopoliticabr</a>
+      <a href="https://www.tiktok.com/@acervopoliticabr">TikTok @acervopoliticabr</a>
+    </div>
+  </section>
+
+  <section>
+    <h2>Privacidade e termos</h2>
+    <p>O aplicativo não coleta, vende nem compartilha dados de espectadores. Os detalhes estão na
+    <a href="privacidade.html">Política de privacidade</a> e nos <a href="termos.html">Termos de uso</a>.</p>
+  </section>
+
+  <p lang="en"><em>Acervo Uploader is a desktop tool used by the creator of the Acervo Político video channel to publish
+  their own videos to YouTube and TikTok through the official APIs. It is not offered to the public and nothing is posted
+  without the account owner's action. See the <a href="privacidade.html">Privacy Policy</a> and
+  <a href="termos.html">Terms of Service</a>.</em></p>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="links">
+      <a href="privacidade.html">Política de privacidade / Privacy Policy</a>
+      <a href="termos.html">Termos de uso / Terms of Service</a>
+    </div>
+    <div>© 2026 Acervo Político · Acervo Uploader</div>
+  </div>
+</footer>
 </body>
 </html>
